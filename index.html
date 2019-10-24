@@ -20,12 +20,23 @@
         super(props);
       }
       render(){
-        return e('button',null,'Like');
+        return (
+          e('button',null,'Like')
+        );
+      }
+    }
+    class Hello extends React.Component{
+      render() {
+        return React.createElement('div', null, `Hello ${this.props.toWhat}`);
       }
     }
   </script>
   <script>
-    ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+    ReactDOM.render(
+      e(LikeButton), document.querySelector('#root'))
+      e('div', null, 'Hello World'),
+      document.getElementById('root')
+    ;
   </script>
 </body>
 </html>
