@@ -42,12 +42,13 @@ class App extends Component {
   }
 
   render() {
-    const { input } = this.state;
-    const {
-      handleChange,
-      handleCreate,
-      handleKeyPress
-    } = this;
+    const { input, todos } = this.state;
+      const {
+        handleChange,
+        handleCreate,
+        handleKeyPress,
+        handleToggle
+      } = this;
 
     return (
       <TodoListTemplate form={(
@@ -58,7 +59,7 @@ class App extends Component {
           onCreate={handleCreate}
         />
       )}>
-        <TodoItemList/>
+        <TodoItemList todos={todos} onToggle={handleToggle}/>
       </TodoListTemplate>
     );
   }
